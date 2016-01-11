@@ -35,7 +35,7 @@ def ask_for_mode():
 
     # 3. edit settings
     if choice == "3":
-        config.edit()
+        config.set_voice()
         print ""
         ask_for_mode()
 
