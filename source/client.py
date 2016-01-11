@@ -9,9 +9,8 @@ import socket
 import select
 import sys
 import re
+import config
 from os import system
-# from config import ADDRESS, PORT
-
 
 ADDRESS = ""
 PORT = ""
@@ -60,6 +59,7 @@ def run():
     my_socket = create_socket_connection()
 
     # greet the user and prompt them for input
+    print 'voice = ' + config.VOICE
     print 'connected to remote host. start typing!'
     prompt()
 
@@ -78,14 +78,22 @@ def run():
                     print '\n disconnected from chat server'
                     sys.exit()
                 else:
-                    # strip the extra data and read message
+                    # strip the extra data from the message
                     message = re.sub('<[^>]+>', '', data)
-                    system('say -r 140'+message)
+
+                    # extract the speakers voice, voice-speed, and message
+                    message = message.split()
+                    speakers_voice = message.pop()
+                    speakers_voice_speed = message.pop()
+                    message = " ".join(message)
+
+                    system('say -v ' + speakers_voice + ' -r ' + speakers_voice_speed + ' ' + message)
+                    # system('say -r 140'+message)
 
             # 2. a user entered a message
             else:
                 msg = sys.stdin.readline()
-                my_socket.send(msg)
+                my_socket.send(msg + " " + str(config.VOICE_SPEED) + " " + config.VOICE + " ")
                 prompt()
 
 if __name__ == "__main__":

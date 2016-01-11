@@ -6,48 +6,55 @@ import os
 directory = os.path.dirname(__file__)
 file_path = os.path.join(directory, 'configuration.txt')
 
-VOICE = 0
-VOICE_SPEED = 0
+VOICE = "Kathy"
+VOICE_SPEED = "74"
 
 
 def set_voice():
     # get the gender of the voice
-    gender = raw_input("would you like a [m]ale or [f]emale voice?")
+    gender = raw_input("would you like a [m]ale or [f]emale voice? > ")
 
     global VOICE
     global VOICE_SPEED
 
     # if the user chooses female
     if gender == "f":
-        selection = raw_input("[A]gnes, [K]athy, [P]rincess, [Vick]i, [Vict]oria")
-        if selection == "A":
+        selection = raw_input("[A]gnes, [K]athy, [P]rincess, [Vick]i, [Vict]oria > ")
+        selection = selection.lower()
+        if selection == "a":
             VOICE = "Agnes"
-        if selection == "K":
+        elif selection == "k":
             VOICE = "Kathy"
-        if selection == "P":
+        elif selection == "p":
             VOICE = "Princess"
-        if selection == "Vick":
+        elif selection == "vick":
             VOICE = "Vicki"
-        if selection == "Vict":
+        elif selection == "vict":
             VOICE = "Victoria"
+        else:
+            print "invalid selection"
+            set_voice()
 
     # if the user chooses male
     if gender == "m":
-        selection = raw_input("[B]ruce, [F]red, [J]unior, [R]alph, [W]hisper")
-        if selection == "B":
+        selection = raw_input("[B]ruce, [F]red, [J]unior, [R]alph, [W]hisper > ")
+        selection = selection.lower()
+        if selection == "b":
             VOICE = "Bruce"
-        if selection == "F":
+        elif selection == "f":
             VOICE = "Fred"
-        if selection == "J":
+        elif selection == "j":
             VOICE = "Junior"
-        if selection == "R":
+        elif selection == "r":
             VOICE = "Ralph"
-        if selection == "W":
+        elif selection == "w":
             VOICE = "Whisper"
+        else:
+            print "invalid selection"
+            set_voice()
 
     # get the speaking rate for the users voice
-    rate = raw_input("Rate?")
-    VOICE_SPEED = int(rate)
+    VOICE_SPEED = raw_input("Rate? > ")
 
 
 # def load():
