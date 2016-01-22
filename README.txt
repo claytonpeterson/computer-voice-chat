@@ -1,1 +1,1 @@
- click on run.command to chat! 
+click on run.command to chat! 

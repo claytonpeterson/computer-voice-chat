@@ -1,0 +1,91 @@
+body
+{
+    max-width: 410px;
+    max-height: 410px;
+    margin: auto;
+    position: relative;
+    color: rgba(61, 55, 103, 0.1);
+}
+
+.box
+{
+    border-radius: 5px;
+    border: 2px solid #C4B1B1;
+    background-color: #4C422E;
+    box-shadow: 0px 0px 5px #000000;
+}
+
+tr
+{
+    width:100%;
+}
+table, th, td
+{
+    padding: 10px;
+    /*border: 1px solid black;*/
+    /*border-collapse: collapse;*/
+}
+
+th, td
+{
+    text-align: center;
+    padding: 5px;
+}
+
+img
+{
+    width: 50%;
+}
+
+button:hover
+{
+    opacity: 0.50;
+    /*background-color: rosybrown;*/
+    /*background-color: Transparent;*/
+}
+
+button:active
+{
+    width: 90%;
+}
+
+button
+{
+    border: none;
+    background-color: Transparent;
+    outline:none;
+}
+
+p
+{
+    font-size: 120%;
+    font-family: 'Roboto-Thin', sans-serif;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 10px;
+}
+
+p:hover
+{
+        color: rgba(155, 255, 255, 0.5);
+
+}
+
+/*#4C422E*/
+
+/*.center {*/
+    /*width: 400px;*/
+    /*height: 400px;*/
+    /*margin-left: auto ;*/
+    /*margin-right: auto ;*/
+    /*border: 2px solid #C4B1B1;*/
+    /*border-radius: 18px;*/
+    /*background-color: #4C422E;*/
+/*}*/
+
+/*.button {*/
+    /*background-color: red;*/
+/*}*/
+
+/*.button:hover {*/
+    /*background-color: rosybrown;*/
+/*}*/

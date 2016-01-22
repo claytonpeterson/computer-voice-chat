@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-import source
+import app
 
-import source.main
+import app.main
 
-source.main.ask_for_mode()
+app.main.run_graphical_interface()
